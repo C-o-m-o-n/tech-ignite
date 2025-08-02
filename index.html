@@ -134,6 +134,7 @@
         <button
             id="toc-toggle"
             class="lg:hidden fixed top-4 left-4 z-50 bg-accent-green text-white p-3 rounded-full shadow-lg"
+            onclick="document.getElementById('toc').classList.toggle('-translate-x-full')"
         >
             <i class="fas fa-bars"></i>
         </button>
@@ -2677,6 +2678,7 @@
                 document
                     .getElementById("toc-toggle")
                     .addEventListener("click", function () {
+                      alert("TOC toggled");
                         const toc = document.getElementById("toc");
                         toc.classList.toggle("-translate-x-full");
                     });
