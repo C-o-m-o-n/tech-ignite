@@ -1210,7 +1210,6 @@
                 </div>
             </section>
 
-            <!-- Interactive Session Section -->
             <section id="interactive-session" class="py-20 bg-warm-cream">
                 <div class="max-w-6xl mx-auto px-4 md:px-8">
                     <div class="text-center mb-16">
@@ -1371,7 +1370,7 @@
                                 <div
                                     class="bg-accent-green/10 p-6 rounded-lg border-l-4 border-accent-green"
                                 >
-                                    <p
+                                    <!-- <p
                                         class="text-deep-forest font-medium mb-2"
                                     >
                                         Goal:
@@ -1381,7 +1380,19 @@
                                         youth can express goals, explore
                                         pathways, and build connections around
                                         shared learning objectives.
-                                    </p>
+                                    </p> -->
+
+                                    <div class="text-center">
+                                        <img
+                                            src="interests-qr-code.png"
+                                            alt="QR Code"
+                                            class="rounded-2xl border"
+                                        />
+                                        <p class="text-stone-gray">
+                                            Scan to Share your interest in Tech
+                                            Ignite
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1565,7 +1576,8 @@
                                     institutions.
                                 </p>
                                 <a
-                                    href="#"
+                                    href="https://www.coursera.org/"
+                                    target="_blank"
                                     class="text-accent-green hover:underline font-medium"
                                     >Explore Courses →</a
                                 >
@@ -1589,7 +1601,7 @@
                                     AI fundamentals and practical applications.
                                 </p>
                                 <a
-                                    href="#"
+                                    href="https://techdevguide.withgoogle.com/resources/the-ai-hub/"
                                     class="text-muted-blue hover:underline font-medium"
                                     >Access Resources →</a
                                 >
@@ -1613,7 +1625,7 @@
                                     machine learning with practical exercises.
                                 </p>
                                 <a
-                                    href="#"
+                                    href="https://www.kaggle.com/learn"
                                     class="text-earth-brown hover:underline font-medium"
                                     >Start Learning →</a
                                 >
@@ -1883,7 +1895,7 @@
                                     Kisumu Today
                                 </a>
                             </div>
-                            <div class="text-center h-full">
+                            <div class="text-center h-full mt-4">
                                 <img
                                     src="https://res.cloudinary.com/startup-grind/image/fetch/c_scale,w_2560/c_crop,h_650,w_2560,y_0.75_mul_h_sub_0.75_mul_650/c_crop,h_650,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/chapter_banners/1500x500_X5b2zlL.jpeg"
                                     alt="Diverse group of developers collaborating at a Google Developer Groups meetup"
@@ -2661,81 +2673,112 @@
         </main>
 
         <script>
-            // Mobile TOC Toggle
-            document
-                .getElementById("toc-toggle")
-                .addEventListener("click", function () {
-                    const toc = document.getElementById("toc");
-                    toc.classList.toggle("-translate-x-full");
+                // Mobile TOC Toggle
+                document
+                    .getElementById("toc-toggle")
+                    .addEventListener("click", function () {
+                        const toc = document.getElementById("toc");
+                        toc.classList.toggle("-translate-x-full");
+                    });
+
+                // Smooth scrolling for TOC links
+                document.querySelectorAll(".toc-link").forEach((link) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute("href").substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: "smooth" });
+                        }
+
+                        // On mobile, close TOC after clicking a link
+                        if (window.innerWidth < 1024) {
+                            document
+                                .getElementById("toc")
+                                .classList.add("-translate-x-full");
+                        }
+                    });
                 });
 
-            // Smooth scrolling for TOC links
-            document.querySelectorAll(".toc-link").forEach((link) => {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute("href").substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: "smooth" });
-                    }
+                // Active section highlighting
+                function updateActiveSection() {
+                    const sections = document.querySelectorAll("section[id]");
+                    const tocLinks = document.querySelectorAll(".toc-link");
 
-                    // On mobile, close TOC after clicking a link
-                    if (window.innerWidth < 1024) {
-                        document
-                            .getElementById("toc")
-                            .classList.add("-translate-x-full");
-                    }
-                });
-            });
+                    let currentSection = "";
 
-            // Active section highlighting
-            function updateActiveSection() {
-                const sections = document.querySelectorAll("section[id]");
-                const tocLinks = document.querySelectorAll(".toc-link");
+                    sections.forEach((section) => {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top <= 100 && rect.bottom >= 100) {
+                            currentSection = section.id;
+                        }
+                    });
 
-                let currentSection = "";
-
-                sections.forEach((section) => {
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top <= 100 && rect.bottom >= 100) {
-                        currentSection = section.id;
-                    }
-                });
-
-                tocLinks.forEach((link) => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${currentSection}`) {
-                        link.classList.add("active");
-                    }
-                });
-            }
-
-            // Update active section on scroll
-            window.addEventListener("scroll", updateActiveSection);
-
-            // Initial call to set active section
-            updateActiveSection();
-
-            // Close TOC when clicking outside on mobile
-            document.addEventListener("click", function (e) {
-                const toc = document.getElementById("toc");
-                const toggle = document.getElementById("toc-toggle");
-
-                if (
-                    window.innerWidth < 1024 &&
-                    !toc.contains(e.target) &&
-                    !toggle.contains(e.target) &&
-                    !toc.classList.contains("-translate-x-full")
-                ) {
-                    toc.classList.add("-translate-x-full");
+                    tocLinks.forEach((link) => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${currentSection}`) {
+                            link.classList.add("active");
+                        }
+                    });
                 }
-            });
 
-            // Prevent closing when clicking inside TOC
-            document
-                .getElementById("toc")
-                .addEventListener("click", function (e) {
-                    e.stopPropagation();
+                // Update active section on scroll
+                window.addEventListener("scroll", updateActiveSection);
+
+                // Initial call to set active section
+                updateActiveSection();
+
+                // Close TOC when clicking outside on mobile
+                document.addEventListener("click", function (e) {
+                    const toc = document.getElementById("toc");
+                    const toggle = document.getElementById("toc-toggle");
+
+                    if (
+                        window.innerWidth < 1024 &&
+                        !toc.contains(e.target) &&
+                        !toggle.contains(e.target) &&
+                        !toc.classList.contains("-translate-x-full")
+                    ) {
+                        toc.classList.add("-translate-x-full");
+                    }
+                });
+
+                // Prevent closing when clicking inside TOC
+                document
+                    .getElementById("toc")
+                    .addEventListener("click", function (e) {
+                        e.stopPropagation();
+                    });
+            <script>
+                document.getElementById('aiPollForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const selectedOption = document.querySelector('input[name="aiInterest"]:checked').value;
+
+                    // Store the poll result in local storage
+                    let pollResults = JSON.parse(localStorage.getItem('aiPollResults')) || { beginner: 0, intermediate: 0, advanced: 0 };
+                    pollResults[selectedOption]++;
+                    localStorage.setItem('aiPollResults', JSON.stringify(pollResults));
+
+                    // Display the results
+                    const resultsDiv = document.getElementById('pollResults');
+                    resultsDiv.innerHTML = `
+                        <h4>Poll Results:</h4>
+                        <p>Beginner: ${pollResults.beginner}</p>
+                        <p>Intermediate: ${pollResults.intermediate}</p>
+                        <p>Advanced: ${pollResults.advanced}</p>
+                    `;
+                });
+
+                // Display existing results on page load
+                window.addEventListener('load', function() {
+                    const pollResults = JSON.parse(localStorage.getItem('aiPollResults')) || { beginner: 0, intermediate: 0, advanced: 0 };
+                    const resultsDiv = document.getElementById('pollResults');
+                    resultsDiv.innerHTML = `
+                        <h4>Poll Results:</h4>
+                        <p>Beginner: ${pollResults.beginner}</p>
+                        <p>Intermediate: ${pollResults.intermediate}</p>
+                        <p>Advanced: ${pollResults.advanced}</p>
+                    `;
                 });
         </script>
     </body>
