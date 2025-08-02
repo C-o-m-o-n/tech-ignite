@@ -1,0 +1,2742 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tech Ignite: Leveraging AI for Youth Opportunities</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "earth-brown": "#8B4513",
+                            "deep-forest": "#2F4F4F",
+                            "stone-gray": "#708090",
+                            "warm-cream": "#F5F5DC",
+                            "accent-green": "#228B22",
+                            "muted-blue": "#4682B4",
+                        },
+                        fontFamily: {
+                            serif: ["Playfair Display", "serif"],
+                            sans: ["Inter", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .gradient-overlay {
+                background: linear-gradient(
+                    135deg,
+                    rgba(139, 69, 19, 0.8) 0%,
+                    rgba(47, 79, 79, 0.9) 100%
+                );
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .toc-link.active {
+                color: #228b22;
+                border-left: 3px solid #228b22;
+            }
+            .section-divider {
+                background: linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    #228b22 50%,
+                    transparent 100%
+                );
+                height: 1px;
+            }
+            .hover-lift {
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+        </style>
+    </head>
+
+    <body class="bg-warm-cream text-gray-800 font-sans overflow-x-hidden">
+        <!-- Fixed Table of Contents -->
+        <nav
+            id="toc"
+            class="fixed left-0 top-0 h-screen w-80 bg-white shadow-xl z-40 overflow-y-auto border-r border-stone-gray/20 transform -translate-x-full lg:translate-x-0 transition-transform duration-300"
+        >
+            <div class="p-8">
+                <h3 class="font-serif text-xl font-bold text-deep-forest mb-6">
+                    Table of Contents
+                </h3>
+                <ul class="space-y-4 text-sm">
+                    <li>
+                        <a
+                            href="#hero"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >Introduction</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#ai-fundamentals"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >AI Fundamentals</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#ai-opportunities"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >AI Opportunities</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#prompting-mastery"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >Prompting Mastery</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#interactive-session"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >Interactive Session</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#resources"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >Resources</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#conclusion"
+                            class="toc-link block py-2 px-4 text-stone-gray hover:text-deep-forest transition-colors border-l-3 border-transparent"
+                            >Conclusion</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile TOC Toggle -->
+        <button
+            id="toc-toggle"
+            class="lg:hidden fixed top-4 left-4 z-50 bg-accent-green text-white p-3 rounded-full shadow-lg"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Main Content -->
+        <main class="lg:ml-80">
+            <!-- Hero Section -->
+            <section
+                id="hero"
+                class="relative min-h-screen flex items-center justify-center overflow-hidden"
+            >
+                <!-- Background Image with Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img
+                        src="https://kimi-web-img.moonshot.cn/img/d4dhub.eu/e5cc9b06e4db6f3392bbe51001a65b0b961bafed"
+                        alt="African youth collaborating in a technology workspace"
+                        class="w-full h-full object-cover"
+                        size="wallpaper"
+                        aspect="wide"
+                        style="photo"
+                        query="African youth technology workspace collaboration"
+                        referrerpolicy="no-referrer"
+                        data-modified="1"
+                        data-score="0.00"
+                    />
+                    <div class="gradient-overlay absolute inset-0"></div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-16">
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                    >
+                        <!-- Title Section -->
+                        <div>
+                            <h1
+                                class="font-serif text-4xl md:text-5xl lg:text-7xl font-bold text-white text-shadow mb-6 leading-tight"
+                            >
+                                <em class="italic">Tech Ignite:</em>
+                                <br />
+                                Leveraging AI for
+                                <br />
+                                <span class="text-accent-green"
+                                    >Youth Opportunities</span
+                                >
+                            </h1>
+                            <p
+                                class="text-lg md:text-xl text-warm-cream mb-8 leading-relaxed"
+                            >
+                                Empowering the next generation with practical AI
+                                skills, real-world applications, and pathways to
+                                digital careers in East Africa.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <span
+                                    class="bg-accent-green text-white px-4 py-2 rounded-full text-sm font-medium"
+                                    >AI Fundamentals</span
+                                >
+                                <span
+                                    class="bg-muted-blue text-white px-4 py-2 rounded-full text-sm font-medium"
+                                    >Prompt Engineering</span
+                                >
+                                <span
+                                    class="bg-earth-brown text-white px-4 py-2 rounded-full text-sm font-medium"
+                                    >Career Opportunities</span
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Key Highlights Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover-lift"
+                            >
+                                <i
+                                    class="fas fa-robot text-accent-green text-3xl mb-4"
+                                ></i>
+                                <h3
+                                    class="font-serif text-xl font-semibold text-white mb-2"
+                                >
+                                    AI Fundamentals
+                                </h3>
+                                <p class="text-warm-cream text-sm">
+                                    Understanding artificial intelligence and
+                                    its real-world applications for youth
+                                    empowerment.
+                                </p>
+                            </div>
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover-lift"
+                            >
+                                <i
+                                    class="fas fa-code text-muted-blue text-3xl mb-4"
+                                ></i>
+                                <h3
+                                    class="font-serif text-xl font-semibold text-white mb-2"
+                                >
+                                    Structured Prompting
+                                </h3>
+                                <p class="text-warm-cream text-sm">
+                                    Master JSON and XML prompting techniques for
+                                    precise AI interactions.
+                                </p>
+                            </div>
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover-lift"
+                            >
+                                <i
+                                    class="fas fa-briefcase text-earth-brown text-3xl mb-4"
+                                ></i>
+                                <h3
+                                    class="font-serif text-xl font-semibold text-white mb-2"
+                                >
+                                    Career Pathways
+                                </h3>
+                                <p class="text-warm-cream text-sm">
+                                    Exploring AI-driven job opportunities and
+                                    freelancing in emerging tech fields.
+                                </p>
+                            </div>
+                            <div
+                                class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover-lift"
+                            >
+                                <i
+                                    class="fas fa-users text-accent-green text-3xl mb-4"
+                                ></i>
+                                <h3
+                                    class="font-serif text-xl font-semibold text-white mb-2"
+                                >
+                                    Community
+                                </h3>
+                                <p class="text-warm-cream text-sm">
+                                    Connecting with local tech communities like
+                                    GDG Kisumu for ongoing support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Fundamentals Section -->
+            <section id="ai-fundamentals" class="py-20 bg-white">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="font-serif text-4xl md:text-5xl font-bold text-deep-forest mb-6"
+                        >
+                            AI Fundamentals &amp; Real-World Impact
+                        </h2>
+                        <div class="section-divider w-32 mx-auto mb-8"></div>
+                        <p class="text-xl text-stone-gray max-w-3xl mx-auto">
+                            Understanding how artificial intelligence is
+                            creating tangible opportunities for youth across
+                            East Africa.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                        <div>
+                            <h3
+                                class="font-serif text-3xl font-semibold text-deep-forest mb-6"
+                            >
+                                What is Artificial Intelligence?
+                            </h3>
+                            <div
+                                class="prose prose-lg text-stone-gray space-y-4"
+                            >
+                                <p>
+                                    <strong
+                                        >Artificial Intelligence (AI) is the
+                                        simulation of human intelligence
+                                        processes by machines, especially
+                                        computer systems.</strong
+                                    >
+                                    <span class="relative group inline-block">
+                                        <i
+                                            class="fas fa-info-circle text-accent-green ml-2 cursor-pointer"
+                                        ></i>
+                                        <span
+                                            class="absolute left-0 bottom-full mb-2 w-64 p-3 bg-white border border-gray-200 rounded-lg shadow-lg text-sm text-stone-gray z-10 hidden group-hover:block"
+                                        >
+                                            AI is about teaching computers to
+                                            think, learn, and solve problems
+                                            like humans do. It's not just about
+                                            robots - it's about smart algorithms
+                                            that can analyze data, recognize
+                                            patterns, make decisions, and learn
+                                            from experience.
+                                        </span>
+                                    </span>
+                                    These processes include learning, reasoning,
+                                    and self-correction.
+                                </p>
+                                <p>
+                                    In simpler terms, AI is about creating
+                                    machines that can think and act like humans,
+                                    or even outperform humans in specific tasks.
+                                    AI is not just about robots; it&#39;s about
+                                    smart algorithms that can analyze data,
+                                    recognize patterns, make decisions, and
+                                    learn from experience.
+                                </p>
+                                <div
+                                    class="bg-accent-green/10 p-6 rounded-lg border-l-4 border-accent-green"
+                                >
+                                    <p class="text-deep-forest font-medium">
+                                        Examples are all around us: Siri,
+                                        Netflix and YouTube recommendations,
+                                        email spam filters, chatbots,
+                                        self-driving cars, and medical diagnosis
+                                        systems.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <img
+                                src="https://kimi-web-img.moonshot.cn/img/wp.technologyreview.com/a462b4a98e42e4d5314a88d7279e5fe615b97be4.jpg"
+                                alt="Diverse group of African youth collaborating around AI technology"
+                                class="w-full rounded-lg shadow-lg"
+                                size="medium"
+                                aspect="wide"
+                                style="photo"
+                                query="African youth AI collaboration"
+                                referrerpolicy="no-referrer"
+                                data-modified="1"
+                                data-score="0.00"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Real-World Applications -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8"
+                        >
+                            Real-World AI Applications in East Africa
+                        </h3>
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        >
+                            <!-- Tabiya -->
+                            <div
+                                class="bg-warm-cream p-8 rounded-lg hover-lift"
+                            >
+                                <div
+                                    class="bg-accent-green text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6"
+                                >
+                                    <i class="fas fa-briefcase text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Tabiya - AI Job Matching
+                                </h4>
+                                <p class="text-stone-gray mb-4">
+                                    Open-source AI platform developing
+                                    &#34;Horizon&#34; matching engine and
+                                    &#34;Compass&#34; skills discovery tool for
+                                    youth employment.
+                                </p>
+                                <a
+                                    href="https://tabiya.tech/"
+                                    target="_blank"
+                                    class="text-accent-green hover:underline font-medium"
+                                >
+                                    <i class="fas fa-external-link-alt mr-2"></i
+                                    >Learn More
+                                </a>
+                            </div>
+
+                            <!-- Twiga Foods -->
+                            <div
+                                class="bg-warm-cream p-8 rounded-lg hover-lift"
+                            >
+                                <div
+                                    class="bg-muted-blue text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6"
+                                >
+                                    <i class="fas fa-truck text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Twiga Foods
+                                </h4>
+                                <p class="text-stone-gray mb-4">
+                                    Utilizing AI and machine learning for food
+                                    distribution and supply chain management,
+                                    creating data analysis roles.
+                                </p>
+                                <a
+                                    href="#ref-83"
+                                    class="text-accent-green hover:underline font-medium"
+                                >
+                                    <i class="fas fa-bookmark mr-2"></i
+                                    >Reference
+                                </a>
+                            </div>
+
+                            <!-- Apollo Agriculture -->
+                            <div
+                                class="bg-warm-cream p-8 rounded-lg hover-lift"
+                            >
+                                <div
+                                    class="bg-earth-brown text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6"
+                                >
+                                    <i class="fas fa-seedling text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Apollo Agriculture
+                                </h4>
+                                <p class="text-stone-gray mb-4">
+                                    AI-powered platform providing credit and
+                                    agronomic advice to farmers, transforming
+                                    agricultural opportunities.
+                                </p>
+                                <a
+                                    href="#ref-94"
+                                    class="text-accent-green hover:underline font-medium"
+                                >
+                                    <i class="fas fa-bookmark mr-2"></i
+                                    >Reference
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Opportunity Creation -->
+                    <div
+                        class="bg-gradient-to-r from-accent-green/5 to-muted-blue/5 p-12 rounded-xl"
+                    >
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8 text-center"
+                        >
+                            How AI Creates Opportunities
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4 flex items-center"
+                                >
+                                    <i
+                                        class="fas fa-dollar-sign text-accent-green mr-3"
+                                    ></i>
+                                    Making Money
+                                </h4>
+                                <ul class="space-y-3 text-stone-gray">
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-check text-accent-green mt-1 mr-3"
+                                        ></i>
+                                        <span
+                                            >New AI-powered careers: prompt
+                                            engineering, AI digital marketing,
+                                            AI agent implementation</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-check text-accent-green mt-1 mr-3"
+                                        ></i>
+                                        <span
+                                            >Emerging roles: AI Content
+                                            Strategist, Data Annotation
+                                            Specialist, Chatbot Designer</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-check text-accent-green mt-1 mr-3"
+                                        ></i>
+                                        <span
+                                            >Remote work opportunities: data
+                                            labeling, virtual assistance, online
+                                            tutoring</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4 flex items-center"
+                                >
+                                    <i
+                                        class="fas fa-magic text-muted-blue mr-3"
+                                    ></i>
+                                    Automating Life
+                                </h4>
+                                <ul class="space-y-3 text-stone-gray">
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-check text-muted-blue mt-1 mr-3"
+                                        ></i>
+                                        <span
+                                            >Content creation: AI-assisted
+                                            writing, image generation, video
+                                            editing</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-check text-muted-blue mt-1 mr-3"
+                                        ></i>
+                                        <span
+                                            >Software development: automated
+                                            code generation, testing,
+                                            debugging</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-check text-muted-blue mt-1 mr-3"
+                                        ></i>
+                                        <span
+                                            >Personal productivity: schedule
+                                            management, email automation, smart
+                                            home control</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Opportunities Section -->
+            <section id="ai-opportunities" class="py-20 bg-warm-cream">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="font-serif text-4xl md:text-5xl font-bold text-deep-forest mb-6"
+                        >
+                            AI in Action: Fields &amp; Opportunities
+                        </h2>
+                        <div class="section-divider w-32 mx-auto mb-8"></div>
+                        <p class="text-xl text-stone-gray max-w-3xl mx-auto">
+                            Exploring practical applications and career pathways
+                            in emerging AI fields.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                        <!-- Content Creation -->
+                        <div
+                            class="bg-white p-8 rounded-xl shadow-lg hover-lift"
+                        >
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="bg-accent-green text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                >
+                                    <i class="fas fa-pen-fancy text-xl"></i>
+                                </div>
+                                <h3
+                                    class="font-serif text-2xl font-semibold text-deep-forest"
+                                >
+                                    Content Creation with AI
+                                </h3>
+                            </div>
+                            <p class="text-stone-gray mb-6">
+                                AI revolutionizes content creation by assisting
+                                with text, image, and video generation. Tools
+                                can draft articles, create artwork from text
+                                descriptions, and automate video editing tasks.
+                            </p>
+                            <div class="bg-accent-green/10 p-4 rounded-lg">
+                                <p class="text-deep-forest font-medium">
+                                    Benefits: Speeds up production, lowers entry
+                                    barriers, enables constant content flow
+                                    without extensive expertise.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Software Development -->
+                        <div
+                            class="bg-white p-8 rounded-xl shadow-lg hover-lift"
+                        >
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="bg-muted-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                >
+                                    <i class="fas fa-code text-xl"></i>
+                                </div>
+                                <h3
+                                    class="font-serif text-2xl font-semibold text-deep-forest"
+                                >
+                                    Software &amp; AI Development
+                                </h3>
+                            </div>
+                            <p class="text-stone-gray mb-6">
+                                Opportunities in building AI models, integrating
+                                AI capabilities into applications, and
+                                developing AI-powered solutions using platforms
+                                like TensorFlow, PyTorch, and cloud AI services.
+                            </p>
+                            <div class="bg-muted-blue/10 p-4 rounded-lg">
+                                <p class="text-deep-forest font-medium">
+                                    Growing demand for AI app integration skills
+                                    and API utilization across industries.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Data Analytics -->
+                        <div
+                            class="bg-white p-8 rounded-xl shadow-lg hover-lift"
+                        >
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="bg-earth-brown text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                >
+                                    <i class="fas fa-chart-bar text-xl"></i>
+                                </div>
+                                <h3
+                                    class="font-serif text-2xl font-semibold text-deep-forest"
+                                >
+                                    Data Handling &amp; Analytics
+                                </h3>
+                            </div>
+                            <p class="text-stone-gray mb-6">
+                                Data fuels AI, making skills in collection,
+                                cleaning, analysis, and insight derivation
+                                critical. Opportunities range from entry-level
+                                data roles to advanced data science positions.
+                            </p>
+                            <div class="bg-earth-brown/10 p-4 rounded-lg">
+                                <p class="text-deep-forest font-medium">
+                                    High demand for data visualization,
+                                    statistical analysis, and Python/R
+                                    programming skills.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Freelancing -->
+                        <div
+                            class="bg-white p-8 rounded-xl shadow-lg hover-lift"
+                        >
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="bg-accent-green text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                >
+                                    <i class="fas fa-laptop-house text-xl"></i>
+                                </div>
+                                <h3
+                                    class="font-serif text-2xl font-semibold text-deep-forest"
+                                >
+                                    Freelancing in AI Fields
+                                </h3>
+                            </div>
+                            <p class="text-stone-gray mb-6">
+                                AI expands freelancing opportunities through
+                                platforms like Upwork and Fiverr. Services
+                                include AI content creation, software
+                                integration, data analysis, and prompt
+                                engineering.
+                            </p>
+                            <div class="bg-accent-green/10 p-4 rounded-lg">
+                                <p class="text-deep-forest font-medium">
+                                    Offers autonomy, global market access, and
+                                    high earning potential for skilled
+                                    practitioners.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Rise of Prompt Engineering -->
+                    <div
+                        class="bg-gradient-to-br from-deep-forest to-stone-gray text-white p-12 rounded-xl"
+                    >
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h3 class="font-serif text-4xl font-bold mb-8">
+                                The Rise of Prompt Engineering
+                            </h3>
+                            <p class="text-xl mb-8 text-warm-cream">
+                                Prompt engineering has emerged as a critical
+                                skill in the age of generative AI, representing
+                                a significant opportunity for youth to engage
+                                with AI technologies and create value.
+                            </p>
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+                            >
+                                <div class="text-center">
+                                    <div
+                                        class="bg-accent-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                                    >
+                                        <i class="fas fa-brain text-2xl"></i>
+                                    </div>
+                                    <h4
+                                        class="font-serif text-xl font-semibold mb-2"
+                                    >
+                                        Strategic Crafting
+                                    </h4>
+                                    <p class="text-warm-cream">
+                                        Crafting precise instructions to guide
+                                        AI models toward desired outputs
+                                    </p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="bg-muted-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                                    >
+                                        <i
+                                            class="fas fa-low-vision text-2xl"
+                                        ></i>
+                                    </div>
+                                    <h4
+                                        class="font-serif text-xl font-semibold mb-2"
+                                    >
+                                        Low Barrier Entry
+                                    </h4>
+                                    <p class="text-warm-cream">
+                                        Accessible field emphasizing creativity
+                                        and critical thinking over extensive
+                                        coding
+                                    </p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="bg-earth-brown w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                                    >
+                                        <i class="fas fa-globe text-2xl"></i>
+                                    </div>
+                                    <h4
+                                        class="font-serif text-xl font-semibold mb-2"
+                                    >
+                                        Global Opportunities
+                                    </h4>
+                                    <p class="text-warm-cream">
+                                        Remote work potential and freelance gigs
+                                        across industries worldwide
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prompting Mastery Section -->
+            <section id="prompting-mastery" class="py-20 bg-white">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="font-serif text-4xl md:text-5xl font-bold text-deep-forest mb-6"
+                        >
+                            Mastering AI Interaction
+                        </h2>
+                        <div class="section-divider w-32 mx-auto mb-8"></div>
+                        <p class="text-xl text-stone-gray max-w-3xl mx-auto">
+                            Advanced prompting techniques for precise, reliable,
+                            and effective AI communication.
+                        </p>
+                    </div>
+
+                    <!-- Principles of Good Prompting -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8"
+                        >
+                            Principles of Good Prompting
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div
+                                class="text-center p-8 bg-accent-green/5 rounded-xl hover-lift"
+                            >
+                                <div
+                                    class="bg-accent-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                                >
+                                    <i class="fas fa-eye text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Clarity
+                                </h4>
+                                <p class="text-stone-gray">
+                                    Instructions should be unambiguous and easy
+                                    for AI to understand. Avoid jargon and
+                                    complex sentences.
+                                </p>
+                            </div>
+                            <div
+                                class="text-center p-8 bg-muted-blue/5 rounded-xl hover-lift"
+                            >
+                                <div
+                                    class="bg-muted-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                                >
+                                    <i class="fas fa-crosshairs text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Specificity
+                                </h4>
+                                <p class="text-stone-gray">
+                                    Provide detailed information about task,
+                                    length, style, audience, and key elements
+                                    for tailored responses.
+                                </p>
+                            </div>
+                            <div
+                                class="text-center p-8 bg-earth-brown/5 rounded-xl hover-lift"
+                            >
+                                <div
+                                    class="bg-earth-brown text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                                >
+                                    <i class="fas fa-copy text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Examples
+                                </h4>
+                                <p class="text-stone-gray">
+                                    Use few-shot prompting by showing AI
+                                    input-output pairs to demonstrate desired
+                                    response patterns.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JSON vs XML Prompting -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8 text-center"
+                        >
+                            Structured Prompting: JSON vs XML
+                        </h3>
+
+                        <!-- JSON Prompting -->
+                        <div class="mb-12">
+                            <h4
+                                class="font-serif text-2xl font-semibold text-deep-forest mb-6 flex items-center"
+                            >
+                                <i
+                                    class="fas fa-brackets-square text-accent-green mr-3"
+                                ></i>
+                                JSON Prompting
+                            </h4>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <div>
+                                    <p class="text-stone-gray mb-6">
+                                        JSON prompting uses structured key-value
+                                        pairs to provide clear, organized
+                                        blueprints for AI. This approach reduces
+                                        ambiguity and improves output
+                                        consistency.
+                                    </p>
+
+                                    <div
+                                        class="bg-gray-50 p-6 rounded-lg border-l-4 border-accent-green mb-6"
+                                    >
+                                        <h5
+                                            class="font-semibold text-deep-forest mb-3"
+                                        >
+                                            Example:
+                                        </h5>
+                                        <pre
+                                            class="text-sm text-stone-gray overflow-x-auto"
+                                        ><code>{
+  &#34;task&#34;: &#34;write a tweet&#34;,
+  &#34;topic&#34;: &#34;dopamine detox&#34;,
+  &#34;style&#34;: &#34;viral&#34;,
+  &#34;length&#34;: &#34;under 280 characters&#34;,
+  &#34;audience&#34;: &#34;young professionals&#34;,
+  &#34;output_format&#34;: &#34;text&#34;
+}</code></pre>
+                                    </div>
+
+                                    <div class="space-y-3">
+                                        <h5
+                                            class="font-semibold text-deep-forest"
+                                        >
+                                            Benefits:
+                                        </h5>
+                                        <ul class="text-stone-gray space-y-2">
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-accent-green mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Reduces ambiguity and
+                                                    errors</span
+                                                >
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-accent-green mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Facilitates system
+                                                    integration</span
+                                                >
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-accent-green mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Promotes consistency and
+                                                    reusability</span
+                                                >
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-accent-green mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Enables complex requirement
+                                                    definition</span
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img
+                                        src="https://kimi-web-img.moonshot.cn/img/miro.medium.com/f67b34a38ffbc3580257e73cbd3ffab389800057.jpeg"
+                                        alt="JSON code structure"
+                                        class="w-full rounded-lg shadow-lg"
+                                        size="medium"
+                                        aspect="wide"
+                                        color="bw"
+                                        style="photo"
+                                        query="JSON code example"
+                                        referrerpolicy="no-referrer"
+                                        data-modified="1"
+                                        data-score="0.00"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- XML Prompting -->
+                        <div class="mb-12">
+                            <h4
+                                class="font-serif text-2xl font-semibold text-deep-forest mb-6 flex items-center"
+                            >
+                                <i class="fas fa-tags text-muted-blue mr-3"></i>
+                                XML Prompting
+                            </h4>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <div>
+                                    <p class="text-stone-gray mb-6">
+                                        XML tagging offers robust structure for
+                                        complex instructions, particularly
+                                        effective for models like
+                                        Anthropic&#39;s Claude that are trained
+                                        on XML-formatted data.
+                                    </p>
+
+                                    <div
+                                        class="bg-gray-50 p-6 rounded-lg border-l-4 border-muted-blue mb-6"
+                                    >
+                                        <h5
+                                            class="font-semibold text-deep-forest mb-3"
+                                        >
+                                            Example:
+                                        </h5>
+                                        <pre
+                                            class="text-sm text-stone-gray overflow-x-auto"
+                                        ><code>&lt;prompt&gt;
+  &lt;instruction&gt;Translate to Spanish&lt;/instruction&gt;
+  &lt;context&gt;Everyday conversation phrases&lt;/context&gt;
+  &lt;examples&gt;
+    &lt;example&gt;
+      &lt;english&gt;Good morning&lt;/english&gt;
+      &lt;spanish&gt;Buenos días&lt;/spanish&gt;
+    &lt;/example&gt;
+  &lt;/examples&gt;
+  &lt;user_input&gt;Hello, how are you?&lt;/user_input&gt;
+&lt;/prompt&gt;</code></pre>
+                                    </div>
+
+                                    <div class="space-y-3">
+                                        <h5
+                                            class="font-semibold text-deep-forest"
+                                        >
+                                            Benefits:
+                                        </h5>
+                                        <ul class="text-stone-gray space-y-2">
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-muted-blue mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Enhances clarity with
+                                                    explicit tag structure</span
+                                                >
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-muted-blue mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Improves accuracy through
+                                                    better instruction
+                                                    parsing</span
+                                                >
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-muted-blue mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Offers flexibility for
+                                                    iterative development</span
+                                                >
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i
+                                                    class="fas fa-check text-muted-blue mt-1 mr-2 text-sm"
+                                                ></i>
+                                                <span
+                                                    >Improves output parsability
+                                                    and security</span
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img
+                                        src="https://kimi-web-img.moonshot.cn/img/raw.githubusercontent.com/746a99ffbc6f92de953694c0b52573104e186c3c.png"
+                                        alt="XML tags in programming code"
+                                        class="w-full rounded-lg shadow-lg"
+                                        size="medium"
+                                        aspect="wide"
+                                        style="photo"
+                                        query="XML code example"
+                                        referrerpolicy="no-referrer"
+                                        data-modified="1"
+                                        data-score="0.00"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comparison Table -->
+                        <div class="bg-gray-50 p-8 rounded-xl">
+                            <h4
+                                class="font-serif text-2xl font-semibold text-deep-forest mb-6 text-center"
+                            >
+                                JSON vs XML Prompting Comparison
+                            </h4>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr
+                                            class="border-b-2 border-deep-forest"
+                                        >
+                                            <th
+                                                class="py-3 px-4 font-semibold text-deep-forest"
+                                            >
+                                                Feature
+                                            </th>
+                                            <th
+                                                class="py-3 px-4 font-semibold text-deep-forest"
+                                            >
+                                                JSON Prompting
+                                            </th>
+                                            <th
+                                                class="py-3 px-4 font-semibold text-deep-forest"
+                                            >
+                                                XML Prompting
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="space-y-2">
+                                        <tr class="border-b border-gray-200">
+                                            <td
+                                                class="py-3 px-4 font-medium text-deep-forest"
+                                            >
+                                                Primary Use
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Machine-readable output, API
+                                                integration
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Complex instructions, document
+                                                structuring
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-200">
+                                            <td
+                                                class="py-3 px-4 font-medium text-deep-forest"
+                                            >
+                                                Structure
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Key-value pairs, lightweight
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Tags, hierarchical, more verbose
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-200">
+                                            <td
+                                                class="py-3 px-4 font-medium text-deep-forest"
+                                            >
+                                                Readability
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Good for developers
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                More human-readable for complex
+                                                prompts
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-200">
+                                            <td
+                                                class="py-3 px-4 font-medium text-deep-forest"
+                                            >
+                                                Flexibility
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Good for nested structures
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Excellent, modular tags easy to
+                                                modify
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="py-3 px-4 font-medium text-deep-forest"
+                                            >
+                                                Best For
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Automated workflows, data
+                                                extraction
+                                            </td>
+                                            <td
+                                                class="py-3 px-4 text-stone-gray"
+                                            >
+                                                Detailed instructions,
+                                                multi-step reasoning
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Session Section -->
+            <section id="interactive-session" class="py-20 bg-warm-cream">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="font-serif text-4xl md:text-5xl font-bold text-deep-forest mb-6"
+                        >
+                            Interactive Session
+                        </h2>
+                        <div class="section-divider w-32 mx-auto mb-8"></div>
+                        <p class="text-xl text-stone-gray max-w-3xl mx-auto">
+                            Engage with the community and explore your AI
+                            interests through interactive activities.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Live Poll -->
+                        <div
+                            class="bg-white p-8 rounded-xl shadow-lg hover-lift"
+                        >
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="bg-accent-green text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                >
+                                    <i class="fas fa-poll text-xl"></i>
+                                </div>
+                                <h3
+                                    class="font-serif text-2xl font-semibold text-deep-forest"
+                                >
+                                    Live Poll: AI Interests
+                                </h3>
+                            </div>
+                            <p class="text-stone-gray mb-6">
+                                Which AI field excites you most? Participate in
+                                our live poll using Mentimeter or similar tools.
+                            </p>
+
+                            <div class="space-y-4 mb-6">
+                                <div
+                                    class="flex items-center p-4 bg-accent-green/10 rounded-lg cursor-pointer hover:bg-accent-green/20 transition-colors"
+                                >
+                                    <div
+                                        class="w-4 h-4 border-2 border-accent-green rounded mr-4"
+                                    ></div>
+                                    <span class="text-deep-forest"
+                                        >Content Creation with AI</span
+                                    >
+                                </div>
+                                <div
+                                    class="flex items-center p-4 bg-muted-blue/10 rounded-lg cursor-pointer hover:bg-muted-blue/20 transition-colors"
+                                >
+                                    <div
+                                        class="w-4 h-4 border-2 border-muted-blue rounded mr-4"
+                                    ></div>
+                                    <span class="text-deep-forest"
+                                        >Software &amp; AI Development</span
+                                    >
+                                </div>
+                                <div
+                                    class="flex items-center p-4 bg-earth-brown/10 rounded-lg cursor-pointer hover:bg-earth-brown/20 transition-colors"
+                                >
+                                    <div
+                                        class="w-4 h-4 border-2 border-earth-brown rounded mr-4"
+                                    ></div>
+                                    <span class="text-deep-forest"
+                                        >Data Handling &amp; Analytics</span
+                                    >
+                                </div>
+                                <div
+                                    class="flex items-center p-4 bg-accent-green/10 rounded-lg cursor-pointer hover:bg-accent-green/20 transition-colors"
+                                >
+                                    <div
+                                        class="w-4 h-4 border-2 border-accent-green rounded mr-4"
+                                    ></div>
+                                    <span class="text-deep-forest"
+                                        >Prompt Engineering</span
+                                    >
+                                </div>
+                                <div
+                                    class="flex items-center p-4 bg-muted-blue/10 rounded-lg cursor-pointer hover:bg-muted-blue/20 transition-colors"
+                                >
+                                    <div
+                                        class="w-4 h-4 border-2 border-muted-blue rounded mr-4"
+                                    ></div>
+                                    <span class="text-deep-forest"
+                                        >Freelancing in AI Fields</span
+                                    >
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full bg-accent-green text-white py-3 rounded-lg font-semibold hover:bg-accent-green/90 transition-colors"
+                            >
+                                <i class="fas fa-vote-yea mr-2"></i>Submit Your
+                                Vote
+                            </button>
+                        </div>
+
+                        <!-- Discussion -->
+                        <div
+                            class="bg-white p-8 rounded-xl shadow-lg hover-lift"
+                        >
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="bg-muted-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                >
+                                    <i class="fas fa-comments text-xl"></i>
+                                </div>
+                                <h3
+                                    class="font-serif text-2xl font-semibold text-deep-forest"
+                                >
+                                    Discussion &amp; Aspirations
+                                </h3>
+                            </div>
+                            <p class="text-stone-gray mb-6">
+                                Share your AI aspirations and connect with peers
+                                who share similar interests.
+                            </p>
+
+                            <div class="space-y-6">
+                                <div class="bg-gray-50 p-6 rounded-lg">
+                                    <h4
+                                        class="font-semibold text-deep-forest mb-3"
+                                    >
+                                        Discussion Questions:
+                                    </h4>
+                                    <ul class="space-y-2 text-stone-gray">
+                                        <li class="flex items-start">
+                                            <i
+                                                class="fas fa-question-circle text-accent-green mt-1 mr-2"
+                                            ></i>
+                                            <span
+                                                >What draws you to content
+                                                creation with AI?</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i
+                                                class="fas fa-question-circle text-accent-green mt-1 mr-2"
+                                            ></i>
+                                            <span
+                                                >What AI applications are you
+                                                curious about building?</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i
+                                                class="fas fa-question-circle text-accent-green mt-1 mr-2"
+                                            ></i>
+                                            <span
+                                                >How do you plan to use AI
+                                                skills in your career?</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div
+                                    class="bg-accent-green/10 p-6 rounded-lg border-l-4 border-accent-green"
+                                >
+                                    <p
+                                        class="text-deep-forest font-medium mb-2"
+                                    >
+                                        Goal:
+                                    </p>
+                                    <p class="text-stone-gray">
+                                        Create a supportive environment where
+                                        youth can express goals, explore
+                                        pathways, and build connections around
+                                        shared learning objectives.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Poll Visualization Placeholder -->
+                    <div class="mt-16 bg-white p-8 rounded-xl shadow-lg">
+                        <h3
+                            class="font-serif text-2xl font-semibold text-deep-forest mb-6 text-center"
+                        >
+                            Live Poll Results
+                        </h3>
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+                        >
+                            <div>
+                                <div class="space-y-4">
+                                    <div
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-stone-gray"
+                                            >Content Creation</span
+                                        >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-32 bg-gray-200 rounded-full h-2 mr-3"
+                                            >
+                                                <div
+                                                    class="bg-accent-green h-2 rounded-full"
+                                                    style="width: 65%"
+                                                ></div>
+                                            </div>
+                                            <span
+                                                class="text-sm text-stone-gray"
+                                                >65%</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-stone-gray"
+                                            >Software Development</span
+                                        >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-32 bg-gray-200 rounded-full h-2 mr-3"
+                                            >
+                                                <div
+                                                    class="bg-muted-blue h-2 rounded-full"
+                                                    style="width: 45%"
+                                                ></div>
+                                            </div>
+                                            <span
+                                                class="text-sm text-stone-gray"
+                                                >45%</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-stone-gray"
+                                            >Data Analytics</span
+                                        >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-32 bg-gray-200 rounded-full h-2 mr-3"
+                                            >
+                                                <div
+                                                    class="bg-earth-brown h-2 rounded-full"
+                                                    style="width: 30%"
+                                                ></div>
+                                            </div>
+                                            <span
+                                                class="text-sm text-stone-gray"
+                                                >30%</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-stone-gray"
+                                            >Prompt Engineering</span
+                                        >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-32 bg-gray-200 rounded-full h-2 mr-3"
+                                            >
+                                                <div
+                                                    class="bg-accent-green h-2 rounded-full"
+                                                    style="width: 55%"
+                                                ></div>
+                                            </div>
+                                            <span
+                                                class="text-sm text-stone-gray"
+                                                >55%</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-stone-gray"
+                                            >Freelancing</span
+                                        >
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-32 bg-gray-200 rounded-full h-2 mr-3"
+                                            >
+                                                <div
+                                                    class="bg-muted-blue h-2 rounded-full"
+                                                    style="width: 40%"
+                                                ></div>
+                                            </div>
+                                            <span
+                                                class="text-sm text-stone-gray"
+                                                >40%</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <i
+                                    class="fas fa-chart-pie text-6xl text-accent-green mb-4"
+                                ></i>
+                                <p class="text-stone-gray">
+                                    Real-time visualization of audience
+                                    interests and aspirations
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="py-20 bg-white">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="font-serif text-4xl md:text-5xl font-bold text-deep-forest mb-6"
+                        >
+                            Practical Steps &amp; Resources
+                        </h2>
+                        <div class="section-divider w-32 mx-auto mb-8"></div>
+                        <p class="text-xl text-stone-gray max-w-3xl mx-auto">
+                            Essential tools, platforms, and communities to
+                            launch your AI journey.
+                        </p>
+                    </div>
+
+                    <!-- Learning Platforms -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8"
+                        >
+                            Learning Platforms &amp; Courses
+                        </h3>
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        >
+                            <div
+                                class="bg-warm-cream p-6 rounded-xl hover-lift"
+                            >
+                                <div
+                                    class="bg-accent-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                                >
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-3"
+                                >
+                                    Coursera &amp; edX
+                                </h4>
+                                <p class="text-stone-gray mb-4">
+                                    University courses in AI fundamentals,
+                                    machine learning, and data science from top
+                                    institutions.
+                                </p>
+                                <a
+                                    href="#"
+                                    class="text-accent-green hover:underline font-medium"
+                                    >Explore Courses →</a
+                                >
+                            </div>
+
+                            <div
+                                class="bg-warm-cream p-6 rounded-xl hover-lift"
+                            >
+                                <div
+                                    class="bg-muted-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                                >
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-3"
+                                >
+                                    Google AI Hub
+                                </h4>
+                                <p class="text-stone-gray mb-4">
+                                    Free tutorials and learning paths covering
+                                    AI fundamentals and practical applications.
+                                </p>
+                                <a
+                                    href="#"
+                                    class="text-muted-blue hover:underline font-medium"
+                                    >Access Resources →</a
+                                >
+                            </div>
+
+                            <div
+                                class="bg-warm-cream p-6 rounded-xl hover-lift"
+                            >
+                                <div
+                                    class="bg-earth-brown text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                                >
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-3"
+                                >
+                                    Kaggle Learn
+                                </h4>
+                                <p class="text-stone-gray mb-4">
+                                    Hands-on micro-courses in data science and
+                                    machine learning with practical exercises.
+                                </p>
+                                <a
+                                    href="#"
+                                    class="text-earth-brown hover:underline font-medium"
+                                    >Start Learning →</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Online Communities -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8"
+                        >
+                            Online Communities for Support
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div
+                                class="bg-gradient-to-br from-accent-green/10 to-accent-green/5 p-8 rounded-xl"
+                            >
+                                <h4
+                                    class="font-serif text-2xl font-semibold text-deep-forest mb-6"
+                                >
+                                    Global Communities
+                                </h4>
+                                <ul class="space-y-4 text-stone-gray">
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fab fa-reddit text-accent-green mt-1 mr-3"
+                                        ></i>
+                                        <div>
+                                            <span class="font-medium"
+                                                >Reddit:
+                                                r/artificialintelligence,
+                                                r/MachineLearning</span
+                                            >
+                                            <p class="text-sm">
+                                                Global discussion forums for AI
+                                                enthusiasts and professionals
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fab fa-discord text-muted-blue mt-1 mr-3"
+                                        ></i>
+                                        <div>
+                                            <span class="font-medium"
+                                                >AI Discord Servers</span
+                                            >
+                                            <p class="text-sm">
+                                                Real-time chat communities for
+                                                learning and collaboration
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-code text-earth-brown mt-1 mr-3"
+                                        ></i>
+                                        <div>
+                                            <span class="font-medium"
+                                                >Developer Communities</span
+                                            >
+                                            <p class="text-sm">
+                                                TensorFlow, PyTorch, and OpenAI
+                                                forums for technical support
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="bg-gradient-to-br from-muted-blue/10 to-muted-blue/5 p-8 rounded-xl"
+                            >
+                                <h4
+                                    class="font-serif text-2xl font-semibold text-deep-forest mb-6"
+                                >
+                                    Local &amp; Regional Groups
+                                </h4>
+                                <ul class="space-y-4 text-stone-gray">
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-users text-accent-green mt-1 mr-3"
+                                        ></i>
+                                        <div>
+                                            <span class="font-medium"
+                                                >AI Know Zone Foundation</span
+                                            >
+                                            <p class="text-sm">
+                                                Kenya-based AI training and
+                                                mentorship programs
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-shield-alt text-muted-blue mt-1 mr-3"
+                                        ></i>
+                                        <div>
+                                            <span class="font-medium"
+                                                >KICTANet &amp; Kenya Youth
+                                                IGF</span
+                                            >
+                                            <p class="text-sm">
+                                                AI ethics and policy discussion
+                                                groups
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            class="fas fa-globe-africa text-earth-brown mt-1 mr-3"
+                                        ></i>
+                                        <div>
+                                            <span class="font-medium"
+                                                >Regional AI Communities</span
+                                            >
+                                            <p class="text-sm">
+                                                East African tech groups and
+                                                innovation hubs
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance Platforms -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8"
+                        >
+                            Freelance Job Platforms
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div
+                                class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-accent-green transition-colors"
+                            >
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="bg-accent-green text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                    >
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-serif text-xl font-semibold text-deep-forest"
+                                        >
+                                            Upwork &amp; Fiverr
+                                        </h4>
+                                        <p class="text-stone-gray text-sm">
+                                            Global freelance marketplaces for AI
+                                            services
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 text-stone-gray text-sm">
+                                    <li>
+                                        • AI content creation and copywriting
+                                    </li>
+                                    <li>
+                                        • Data annotation and analysis services
+                                    </li>
+                                    <li>
+                                        • Chatbot development and integration
+                                    </li>
+                                    <li>• Prompt engineering consultations</li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="bg-white border-2 border-gray-200 p-8 rounded-xl hover:border-muted-blue transition-colors"
+                            >
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="bg-muted-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4"
+                                    >
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="font-serif text-xl font-semibold text-deep-forest"
+                                        >
+                                            Specialized Platforms
+                                        </h4>
+                                        <p class="text-stone-gray text-sm">
+                                            Niche platforms for technical AI
+                                            work
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 text-stone-gray text-sm">
+                                    <li>• Toptal for premium AI developers</li>
+                                    <li>
+                                        • Freelancer.com for competitive bidding
+                                    </li>
+                                    <li>• Specialized AI gig platforms</li>
+                                    <li>• Remote work job boards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Local Community Highlight -->
+                    <div
+                        class="bg-gradient-to-br from-deep-forest to-stone-gray text-white p-12 rounded-xl"
+                    >
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 gap-2 items-center"
+                        >
+                            <div>
+                                <h3 class="font-serif text-4xl font-bold mb-6">
+                                    Join GDG Kisumu
+                                </h3>
+                                <p class="text-xl text-warm-cream mb-8">
+                                    Connect with Kisumu&#39;s vibrant tech
+                                    community through Google Developer Groups.
+                                    Access workshops, hackathons, networking
+                                    events, and mentorship opportunities.
+                                </p>
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-center">
+                                        <i
+                                            class="fas fa-calendar text-accent-green mr-3"
+                                        ></i>
+                                        <span
+                                            >Regular workshops and study
+                                            jams</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i
+                                            class="fas fa-code text-accent-green mr-3"
+                                        ></i>
+                                        <span
+                                            >Build with AI events and
+                                            hackathons</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i
+                                            class="fas fa-handshake text-accent-green mr-3"
+                                        ></i>
+                                        <span
+                                            >Networking with industry
+                                            professionals</span
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i
+                                            class="fas fa-user-graduate text-accent-green mr-3"
+                                        ></i>
+                                        <span
+                                            >Mentorship and career
+                                            guidance</span
+                                        >
+                                    </div>
+                                </div>
+
+                                <a
+                                    href="https://gdg.community.dev/gdg-kisumu/"
+                                    target="_blank"
+                                    class="bg-accent-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-green/90 transition-colors"
+                                >
+                                    <i class="fas fa-users mr-2"></i>Join GDG
+                                    Kisumu Today
+                                </a>
+                            </div>
+                            <div class="text-center h-full">
+                                <img
+                                    src="https://res.cloudinary.com/startup-grind/image/fetch/c_scale,w_2560/c_crop,h_650,w_2560,y_0.75_mul_h_sub_0.75_mul_650/c_crop,h_650,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/chapter_banners/1500x500_X5b2zlL.jpeg"
+                                    alt="Diverse group of developers collaborating at a Google Developer Groups meetup"
+                                    class="w-full rounded-lg shadow-lg h-full object-cover"
+                                    size="large"
+                                    aspect="wide"
+                                    style="photo"
+                                    query="Google Developer Groups meetup diverse developers"
+                                    referrerpolicy="no-referrer"
+                                    data-modified="1"
+                                    data-score="0.00"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion Section -->
+            <section id="conclusion" class="py-20 bg-warm-cream">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="font-serif text-4xl md:text-5xl font-bold text-deep-forest mb-6"
+                        >
+                            Conclusion &amp; Call to Action
+                        </h2>
+                        <div class="section-divider w-32 mx-auto mb-8"></div>
+                    </div>
+
+                    <!-- Key Takeaways -->
+                    <div class="mb-16">
+                        <h3
+                            class="font-serif text-3xl font-semibold text-deep-forest mb-8 text-center"
+                        >
+                            Key Takeaways
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div
+                                class="text-center p-8 bg-white rounded-xl shadow-lg hover-lift"
+                            >
+                                <div
+                                    class="bg-accent-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                                >
+                                    <i class="fas fa-rocket text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    AI is Here Now
+                                </h4>
+                                <p class="text-stone-gray">
+                                    Artificial Intelligence is creating
+                                    unprecedented opportunities for young people
+                                    across diverse fields and applications.
+                                </p>
+                            </div>
+                            <div
+                                class="text-center p-8 bg-white rounded-xl shadow-lg hover-lift"
+                            >
+                                <div
+                                    class="bg-muted-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                                >
+                                    <i class="fas fa-key text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Master Prompting
+                                </h4>
+                                <p class="text-stone-gray">
+                                    Effective AI interaction through clear,
+                                    specific, and structured prompting is
+                                    essential for unlocking AI&#39;s full
+                                    potential.
+                                </p>
+                            </div>
+                            <div
+                                class="text-center p-8 bg-white rounded-xl shadow-lg hover-lift"
+                            >
+                                <div
+                                    class="bg-earth-brown text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                                >
+                                    <i class="fas fa-door-open text-2xl"></i>
+                                </div>
+                                <h4
+                                    class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                >
+                                    Accessible Entry
+                                </h4>
+                                <p class="text-stone-gray">
+                                    Multiple pathways into AI don&#39;t require
+                                    extensive coding background, with prompt
+                                    engineering offering low-barrier entry.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Encouragement Message -->
+                    <div
+                        class="bg-gradient-to-br from-accent-green/10 to-muted-blue/10 p-12 rounded-xl mb-16"
+                    >
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h3
+                                class="font-serif text-3xl font-bold text-deep-forest mb-8"
+                            >
+                                Explore, Learn, and Connect
+                            </h3>
+                            <p
+                                class="text-xl text-stone-gray mb-8 leading-relaxed"
+                            >
+                                The world of AI is vast and constantly evolving,
+                                which means there&#39;s always something new to
+                                learn and explore. Don&#39;t be intimidated by
+                                complexity; start with basics and build step by
+                                step. Experiment with AI tools, practice
+                                prompting skills, and don&#39;t fear mistakes –
+                                that&#39;s how we learn.
+                            </p>
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+                            >
+                                <div class="text-center">
+                                    <i
+                                        class="fas fa-search text-accent-green text-4xl mb-4"
+                                    ></i>
+                                    <h4
+                                        class="font-serif text-xl font-semibold text-deep-forest mb-2"
+                                    >
+                                        Explore
+                                    </h4>
+                                    <p class="text-stone-gray">
+                                        Take advantage of online courses,
+                                        tutorials, and resources
+                                    </p>
+                                </div>
+                                <div class="text-center">
+                                    <i
+                                        class="fas fa-brain text-muted-blue text-4xl mb-4"
+                                    ></i>
+                                    <h4
+                                        class="font-serif text-xl font-semibold text-deep-forest mb-2"
+                                    >
+                                        Learn
+                                    </h4>
+                                    <p class="text-stone-gray">
+                                        Practice prompting skills and experiment
+                                        with different AI tools
+                                    </p>
+                                </div>
+                                <div class="text-center">
+                                    <i
+                                        class="fas fa-handshake text-earth-brown text-4xl mb-4"
+                                    ></i>
+                                    <h4
+                                        class="font-serif text-xl font-semibold text-deep-forest mb-2"
+                                    >
+                                        Connect
+                                    </h4>
+                                    <p class="text-stone-gray">
+                                        Join communities, share learnings, and
+                                        collaborate on projects
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Call to Action -->
+                    <div class="text-center">
+                        <div class="bg-white p-12 rounded-xl shadow-2xl">
+                            <h3
+                                class="font-serif text-4xl font-bold text-deep-forest mb-6"
+                            >
+                                Join GDG Kisumu Today!
+                            </h3>
+
+                            <p
+                                class="text-xl text-stone-gray mb-8 max-w-3xl mx-auto"
+                            >
+                                Continue your learning journey and connect with
+                                a supportive local tech community. GDG Kisumu
+                                offers workshops, study jams, hackathons,
+                                networking events, and mentorship opportunities.
+                            </p>
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"
+                            >
+                                <div
+                                    class="text-left p-6 bg-warm-cream rounded-lg"
+                                >
+                                    <h4
+                                        class="font-serif text-xl font-semibold text-deep-forest mb-4"
+                                    >
+                                        What You&#39;ll Gain:
+                                    </h4>
+                                    <ul class="space-y-2 text-stone-gray">
+                                        <li class="flex items-center">
+                                            <i
+                                                class="fas fa-check text-accent-green mr-3"
+                                            ></i
+                                            >Latest tech trends and skills
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i
+                                                class="fas fa-check text-accent-green mr-3"
+                                            ></i
+                                            >Project collaboration opportunities
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i
+                                                class="fas fa-check text-accent-green mr-3"
+                                            ></i
+                                            >Professional network building
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i
+                                                class="fas fa-check text-accent-green mr-3"
+                                            ></i
+                                            >Career mentorship and guidance
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <div class="bg-gray-100 p-8 rounded-lg">
+                                        <div class="text-center">
+                                            <img
+                                                src="gdg-qr-code.png"
+                                                alt="QR Code"
+                                                class="rounded-2xl border"
+                                            />
+                                            <p class="text-stone-gray">
+                                                Scan to join GDG Kisumu
+                                            </p>
+                                            <p
+                                                class="text-sm text-stone-gray mt-2"
+                                            >
+                                                Or visit:
+                                                <a
+                                                    href="https://gdg.community.dev/gdg-kisumu/"
+                                                    >https://gdg.community.dev/gdg-kisumu/</a
+                                                >
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a
+                                href="https://gdg.community.dev/gdg-kisumu/"
+                                target="_blank"
+                                class="bg-accent-green text-white px-12 py-4 rounded-lg font-semibold text-lg hover:bg-accent-green/90 transition-colors"
+                            >
+                                <i class="fas fa-users mr-2"></i>Join the Tech
+                                Revolution
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- References Section -->
+            <section class="py-16 bg-gray-50">
+                <div class="max-w-6xl mx-auto px-4 md:px-8">
+                    <h3
+                        class="font-serif text-3xl font-semibold text-deep-forest mb-8 text-center"
+                    >
+                        References
+                    </h3>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-stone-gray"
+                    >
+                        <div
+                            id="ref-1"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[1]</strong> Google Cloud. &#34;101
+                            Real-World Generative AI Use Cases.&#34;
+                            <a
+                                href="https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-7"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[7]</strong> MindBees. &#34;JSON Prompts AI
+                            Accuracy.&#34;
+                            <a
+                                href="https://www.mindbees.com/blog/json-prompts-ai-accuracy/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-28"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[28]</strong> ChatMaxima. &#34;JSON
+                            Prompting: Mastering Structured Inputs for AI
+                            Models.&#34;
+                            <a
+                                href="https://chatmaxima.com/blog/json-prompting-mastering-structured-inputs-for-ai-models/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-29"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[29]</strong> Tuya Digital. &#34;JSON
+                            Prompting.&#34;
+                            <a
+                                href="https://tuyadigital.com/json-prompting/"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-33"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[33]</strong> MindBees. &#34;JSON Prompts AI
+                            Accuracy.&#34;
+                            <a
+                                href="https://www.mindbees.com/blog/json-prompts-ai-accuracy/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-36"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[36]</strong> Tuya Digital. &#34;JSON
+                            Prompting.&#34;
+                            <a
+                                href="https://tuyadigital.com/json-prompting/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-53"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[53]</strong> Walturn. &#34;Mastering Prompt
+                            Engineering for Claude.&#34;
+                            <a
+                                href="https://www.walturn.com/insights/mastering-prompt-engineering-for-claude"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-77"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[77]</strong> Scrapfly. &#34;JSON vs
+                            XML.&#34;
+                            <a
+                                href="https://scrapfly.io/blog/posts/json-vs-xml"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-78"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[78]</strong> Tabiya Tech. LinkedIn Post.
+                            <a
+                                href="https://www.linkedin.com/posts/tabiya_opensource-ai-digitalpublicgoods-activity-7266123014394593280-aleX"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-79"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[79]</strong> Tabiya. Official Website.
+                            <a
+                                href="https://tabiya.org/"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-80"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[80]</strong> BrighterMonday Kenya. AI Jobs.
+                            <a
+                                href="https://www.brightermonday.co.ke/jobs/nairobi"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-81"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[81]</strong> Tabiya Tech. Official Website.
+                            <a
+                                href="https://tabiya.tech/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-82"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[82]</strong> Tabiya Tech. LinkedIn.
+                            <a
+                                href="https://et.linkedin.com/company/tabiya-tech?trk=ppro_cprof"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-83"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[83]</strong> CW EIC. &#34;AI, Youth and the
+                            Future of Work.&#34;
+                            <a
+                                href="https://www.cweic.org/insights/ai-youth-and-the-future-of-work-unlocking-opportunities-in-the-commonwealth/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-84"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[84]</strong> LinkedIn Kenya. AI Jobs.
+                            <a
+                                href="https://ke.linkedin.com/jobs/artificial-intelligence-jobs"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-85"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[85]</strong> AI Know Zone Foundation.
+                            &#34;AI for Youth Employability.&#34;
+                            <a
+                                href="https://aiknowzonefoundation.org/ai-for-youth-employability/"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-86"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[86]</strong> Masisha. &#34;AI and Remote
+                            Jobs for Young People in Kenya.&#34;
+                            <a
+                                href="https://masisha.com/ai-and-remote-jobs-new-opportunities-for-young-people-in-kenya/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-87"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[87]</strong> Sama. &#34;4 Ways AI Makes
+                            Positive Impact in East Africa.&#34;
+                            <a
+                                href="https://www.sama.com/blog/4-ways-ai-makes-a-positive-impact-on-communities-in-east-africa"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-88"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[88]</strong> Strathmore iLab Africa.
+                            &#34;Impact of Generative AI on Online Safety.&#34;
+                            <a
+                                href="https://ilabafrica.strathmore.edu/the-impact-of-generative-ai-on-online-safety/"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-91"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[91]</strong> FinTech Association of Kenya.
+                            LinkedIn Post about Zone01 Kisumu.
+                            <a
+                                href="https://www.linkedin.com/posts/fintech-association-of-kenya_zone-01-opens-in-kisumu-to-nurture-young-activity-7198588835918712832-juCV"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-93"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[93]</strong> Tech in Africa. &#34;How AI
+                            Career Tools Address Youth Unemployment.&#34;
+                            <a
+                                href="https://www.techinafrica.com/how-ai-career-tools-address-youth-unemployment/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-94"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[94]</strong> ILO. &#34;Kenyan Youth Harness
+                            AI to Tackle Unemployment.&#34;
+                            <a
+                                href="https://www.ilo.org/resource/news/kenyan-youth-harness-ai-tackle-unemployment"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-96"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[96]</strong> Tabiya. Blog Posts.
+                            <a
+                                href="https://tabiya.org/blog/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-116"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[116]</strong> Extended Forms. &#34;Google
+                            Forms for Data Analysis.&#34;
+                            <a
+                                href="https://extendedforms.io/blog/google-forms-for-data-analysis"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-117"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[117]</strong> wpDataTables. &#34;Google
+                            Forms Results Graph.&#34;
+                            <a
+                                href="https://wpdatatables.com/google-forms-results-graph/"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-120"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[120]</strong> Flourish. &#34;Survey
+                            Template.&#34;
+                            <a
+                                href="https://flourish.studio/visualisations/survey-template/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-122"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[122]</strong> Visme. &#34;Survey Results
+                            Report.&#34;
+                            <a
+                                href="https://www.visme.co/survey-results-report/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-123"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[123]</strong> Mentimeter. &#34;Survey
+                            Features.&#34;
+                            <a
+                                href="https://www.mentimeter.com/features/surveys"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-164"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[164]</strong> Medium. &#34;Effective Prompt
+                            Engineering: Mastering XML Tags.&#34;
+                            <a
+                                href="https://medium.com/@Tech4Humans/effective-prompt-engineering-mastering-xml-tags-for-clarity-precision-and-security-in-llms-992cae203fdc"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-165"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[165]</strong> Xu Zhe. &#34;Prompt XML.&#34;
+                            <a
+                                href="https://www.xuzhe.tj.cn/index.php/2024/10/06/prompt-xml/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-166"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[166]</strong> Alex Op. &#34;XML Tagged
+                            Prompts Framework.&#34;
+                            <a
+                                href="https://alexop.dev/posts/xml-tagged-prompts-framework-reliable-ai-responses/"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-169"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[169]</strong> Deepset. &#34;Prompt
+                            Customization for Anthropic.&#34;
+                            <a
+                                href="https://haystack.deepset.ai/cookbook/prompt_customization_for_anthropic"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-170"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[170]</strong> Medium. &#34;Prompt
+                            Engineering with Anthropic Claude.&#34;
+                            <a
+                                href="https://medium.com/promptlayer/prompt-engineering-with-anthropic-claude-5399da57461d"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-172"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[172]</strong> Anthropic. &#34;Build with
+                            Claude: Prompt Engineering with XML Tags.&#34;
+                            <a
+                                href="https://docs.anthropic.com/zh-CN/docs/build-with-claude/prompt-engineering/use-xml-tags"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-174"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[174]</strong> AI Competence. &#34;JSON
+                            Prompting Supercharges Multi-Agent AI Systems.&#34;
+                            <a
+                                href="https://aicompetence.org/json-prompting-supercharges-multi-agent-ai-systems/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-178"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[178]</strong> AE Cyber Pro. &#34;Better LLM
+                            Prompts Using XML.&#34;
+                            <a
+                                href="https://www.aecyberpro.com/blog/general/2024-10-20-Better-LLM-Prompts-Using-XML/"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-181"
+                            class="bg-white p-4 rounded border-l-4 border-accent-green"
+                        >
+                            <strong>[181]</strong> Walturn. &#34;Mastering
+                            Prompt Engineering for Claude.&#34;
+                            <a
+                                href="https://www.walturn.com/insights/mastering-prompt-engineering-for-claude"
+                                target="_blank"
+                                class="text-accent-green hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-184"
+                            class="bg-white p-4 rounded border-l-4 border-muted-blue"
+                        >
+                            <strong>[184]</strong> GDG Community. &#34;Build
+                            with AI Kisumu 2025.&#34;
+                            <a
+                                href="https://gdg.community.dev/events/details/google-gdg-kisumu-presents-build-with-ai-kisumu-2025/"
+                                target="_blank"
+                                class="text-muted-blue hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                        <div
+                            id="ref-186"
+                            class="bg-white p-4 rounded border-l-4 border-earth-brown"
+                        >
+                            <strong>[186]</strong> Zone01 Kisumu. LinkedIn Post.
+                            <a
+                                href="https://www.linkedin.com/posts/zone01kisumu_buildwithai-artificialintelligence-builwithai-activity-7193565236556185600-fObO"
+                                target="_blank"
+                                class="text-earth-brown hover:underline"
+                                >Link</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // Mobile TOC Toggle
+            document
+                .getElementById("toc-toggle")
+                .addEventListener("click", function () {
+                    const toc = document.getElementById("toc");
+                    toc.classList.toggle("-translate-x-full");
+                });
+
+            // Smooth scrolling for TOC links
+            document.querySelectorAll(".toc-link").forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: "smooth" });
+                    }
+
+                    // On mobile, close TOC after clicking a link
+                    if (window.innerWidth < 1024) {
+                        document
+                            .getElementById("toc")
+                            .classList.add("-translate-x-full");
+                    }
+                });
+            });
+
+            // Active section highlighting
+            function updateActiveSection() {
+                const sections = document.querySelectorAll("section[id]");
+                const tocLinks = document.querySelectorAll(".toc-link");
+
+                let currentSection = "";
+
+                sections.forEach((section) => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = section.id;
+                    }
+                });
+
+                tocLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSection}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+
+            // Update active section on scroll
+            window.addEventListener("scroll", updateActiveSection);
+
+            // Initial call to set active section
+            updateActiveSection();
+
+            // Close TOC when clicking outside on mobile
+            document.addEventListener("click", function (e) {
+                const toc = document.getElementById("toc");
+                const toggle = document.getElementById("toc-toggle");
+
+                if (
+                    window.innerWidth < 1024 &&
+                    !toc.contains(e.target) &&
+                    !toggle.contains(e.target) &&
+                    !toc.classList.contains("-translate-x-full")
+                ) {
+                    toc.classList.add("-translate-x-full");
+                }
+            });
+
+            // Prevent closing when clicking inside TOC
+            document
+                .getElementById("toc")
+                .addEventListener("click", function (e) {
+                    e.stopPropagation();
+                });
+        </script>
+    </body>
+</html>
